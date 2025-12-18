@@ -7,6 +7,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router";
+import Users from './Users.jsx';
 
 
 let router = createBrowserRouter([
@@ -14,6 +15,10 @@ let router = createBrowserRouter([
     path: "/",
     element: <App />
     
+  },{
+path:'/users',
+element:<Users/>,
+loader: ()=>fetch('http://localhost:5000/user')
   }
 ]);
 
